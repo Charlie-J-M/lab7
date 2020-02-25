@@ -59,20 +59,23 @@ module IntListStack =
     type stack = int list
 
     (* empty -- An empty stack *)
-    let empty : stack = failwith "not implemented"
+    let empty : stack = []
 
     (* push i s -- Adds an integer element i to the top of stack s *)
-    let push (i : int) (s : stack) : stack = failwith "not implemented"
+    let push (i : int) (s : stack) : stack =
+      i :: s
 
     (* top s -- Returns the value of the topmost element on stack s,
        raising the EmptyStack exception if there is no element to be
        returned. *)
-    let top (s : stack) : int = failwith "not implemented"
+    let top (hd::tl : stack) : int =
+      hd
 
     (* pop s -- Returns a stack with the topmost element from s
        removed, raising the EmptyStack exception if there is no
        element to be removed. *)
-    let pop (s : stack) : stack = failwith "not implemented"
+    let pop (s : stack) : stack =
+
   end ;;
 
 (* Now let's use this implementation and consider some implications.
