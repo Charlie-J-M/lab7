@@ -60,10 +60,10 @@ module Math : MATH =
     let cos = cos
     let sin = sin
     let sum (x: float) (y: float) = x +. y
-    let rec max (lst: float list) =
+    let max (lst: float list) =
       match lst with
       | [] -> None
-      | hd::tl -> Stdlib.max (Some hd) (max tl)
+      | hd::tl -> Some (List.fold_left max hd tl)
   end ;;
 
 (*......................................................................
